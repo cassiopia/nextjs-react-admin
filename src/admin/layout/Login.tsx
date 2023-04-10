@@ -68,7 +68,7 @@ const Login = () => {
                     alignItems: 'center',
                     justifyContent: 'flex-start',
                     background:
-                        'url(https://source.unsplash.com/random/1600x900)',
+                        'url(https://i.imgur.com/YKgbMN5.jpg)',
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                 }}
@@ -93,7 +93,7 @@ const Login = () => {
                             color: theme => theme.palette.grey[500],
                         }}
                     >
-                        Hint: demo / demo
+
                     </Box>
                     <Box sx={{ padding: '0 1em 1em 1em' }}>
                         <Box sx={{ marginTop: '1em' }}>

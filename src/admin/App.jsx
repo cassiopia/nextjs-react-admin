@@ -1,15 +1,27 @@
-// in src/admin/App.jsx
 import * as React from "react";
-import { Admin, Resource} from 'react-admin';
-import pageDataProvider from "../providers/pageDataProvider";
-import { PageBlogList } from "../pageBlogList";
-import { PagePortfolioList } from "../pagePortfolioList";
+import { Admin, Resource, ListGuesser } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
+import authProvider from './authProvider';
+import { Login, Layout } from './layout';
+import { greenTheme } from './layout/themes';
 
+
+const myArray = ["Ford", "BMW", "Fiat"];
+console.log('!!!!!!!!!!', myArray);
+
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const App = () => (
-    <Admin dataProvider={pageDataProvider}>
-        <Resource name="blog" list={PageBlogList} />
-        <Resource name="portfolio" list={PagePortfolioList} />
+    <Admin
+        dataProvider={dataProvider}
+        authProvider={authProvider}
+        loginPage={Login}
+        layout={Layout}
+        theme={greenTheme}
+    >
+        <Resource name="posts" list={ListGuesser} />
+        <Resource name="comments" list={ListGuesser} />
+
     </Admin>
 );
 
