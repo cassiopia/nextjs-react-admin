@@ -3,7 +3,7 @@ import { stringify } from 'query-string';
 
 //const apiUrl = 'https://my.api.com/';
 //http://localhost:3000/page/http://localhost:3000/page/get_by_page_type//
-const apiUrl = 'http://localhost:3000/page';
+const apiUrl = 'http://localhost:3010/page';
 const httpClient = fetchUtils.fetchJson;
 
 export default {
@@ -19,6 +19,7 @@ export default {
         // const url = `${apiUrl}/${resource}?${stringify(query)}`;
         console.log('meta? ;)', params.meta);
         const url = `${apiUrl}/get_by_page_type/${params.meta.pageType}`;
+      //  const url = `${apiUrl}/get_by_page_type/2`;
 
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
@@ -29,7 +30,8 @@ export default {
     },
 
     getOne: (resource, params) =>
-        httpClient(`${apiUrl}/get_one_by_id/{params.id}`).then(({ json }) => ({
+        //httpClient(`${apiUrl}/get_one_by_id/{params.id}`).then(({ json }) => ({
+        httpClient(`${apiUrl}/get_one_by_id/2`).then(({ json }) => ({
             data: json,
         })),
     //
