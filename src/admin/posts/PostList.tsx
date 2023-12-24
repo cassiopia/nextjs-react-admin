@@ -1,6 +1,6 @@
 import { Datagrid, EmailField, List, ReferenceField, TextField } from 'react-admin';
 
-export const PostList = () => (
+export default  (
     <List>
         <Datagrid>
             <TextField source="id" />

@@ -4,8 +4,8 @@ import postgrestRestProvider from '@raphiniert/ra-data-postgrest';
 import authProvider from './authProvider';
 import {Login, Layout} from './layout';
 import {greenTheme} from './layout/themes';
-import {PortfolioList} from "./PortfolioList";
-import {PostList} from "./PostList";
+import {NewsList} from "./NewsList";
+import posts from "./posts";
 
 const dataPostgreeProvider = postgrestRestProvider('http://localhost:3001/posts');
 
@@ -20,8 +20,8 @@ const App = () => (
             layout={Layout}
             theme={greenTheme}
         >
-            <Resource name="tmp" list={PortfolioList}/>
-            <Resource name="post" list={PostList}/>
+            <Resource name="news" list={NewsList}/>
+            <Resource name="post" {...posts}/>
 
         </Admin>
     </>

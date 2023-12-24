@@ -1,12 +1,10 @@
 import { Datagrid, EmailField, List, ReferenceField, TextField } from 'react-admin';
 
-export const PortfolioList = () => (
+export const NewsList = () => (
     <List>
         <Datagrid>
             <TextField source="id" />
             <TextField source="title" />
-            <TextField source="name" />
-            <TextField source="task" />
         </Datagrid>
     </List>
 );
@@ -15,7 +13,7 @@ export const PortfolioList = () => (
 // import { List, Datagrid, TextField } from "react-admin";
 // import {ListViewProps} from "ra-ui-materialui/src/list/ListView";
 //
-// export const PortfolioList = (props: Omit<ListViewProps, 'children'>) => {
+// export const NewsList = (props: Omit<ListViewProps, 'children'>) => {
 //
 //     interface PortfolioListProps {
 //         name: string;
